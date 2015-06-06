@@ -1,5 +1,5 @@
 {
-    "name": "kuroi/cluster",
+    "name": "petercoles/cluster-manager",
     "type": "library",
     "description": "Manage, scale and contract server clusters with PHP.",
     "keywords": ["php", "server monitoring", "cluster management", "cloud management"],
