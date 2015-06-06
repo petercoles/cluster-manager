@@ -7,5 +7,13 @@ php:
   - 7.0
   - hhvm
 
-install:
-  - travis_retry composer update --prefer-lowest
+env:
+  matrix:
+    - PREFER_LOWEST="--prefer-lowest"
+    - PREFER_LOWEST=""
+
+before_script:
+  - composer update --prefer-source $PREFER_LOWEST 
+
+script:
+  - ./bin/phpunit
