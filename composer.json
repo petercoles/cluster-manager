@@ -1,0 +1,36 @@
+{
+    "name": "kuroi/cluster",
+    "type": "library",
+    "description": "Manage, scale and contract server clusters with PHP.",
+    "keywords": ["php", "server monitoring", "cluster management", "cloud management"],
+    "license": "MIT",
+    "homepage": "http://kuroiweb.com",
+    "authors": [
+        {
+            "name": "Peter D Coles",
+            "email": "peter@kuroiweb.com",
+            "homepage": "http://petercoles.com",
+            "role": "developer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/petercoles/cluster"
+    },
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.0",
+        "mockery/mockery": "~0.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "Kuroi\\Cluster\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Kuroi\\Cluster\\Test\\": "tests"
+        }
+    }
+}
