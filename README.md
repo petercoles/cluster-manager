@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/petercoles/cluster-manager.svg?branch=master)](https://travis-ci.org/petercoles/cluster-manager)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/petercoles/cluster-manager/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/petercoles/cluster-manager/?branch=master)
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
 
 Despite the goodness above, this project is at a very early stage of development, is missing key functionality and is not, yet, recommended for adoption.
 
