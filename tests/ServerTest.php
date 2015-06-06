@@ -6,5 +6,8 @@ use Kuroi\Cluster\Servers\Server;
 
 class ServerTest extends \PHPUnit_Framework_TestCase
 {
+    public function testDummy()
+    {
 
+    }
 }

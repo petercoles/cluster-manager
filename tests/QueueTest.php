@@ -6,5 +6,8 @@ use Kuroi\Cluster\Queues\Queue;
 
 class QueueTest extends \PHPUnit_Framework_TestCase
 {
+    public function testDummy()
+    {
 
+    }
 }
