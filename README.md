@@ -1,6 +1,8 @@
 # PHP Cluster Manager
 
-This project is at a very early stage of development and is not recommended for adoption.
+[![Build Status](https://travis-ci.org/petercoles/cluster-manager.svg?branch=master)](https://travis-ci.org/petercoles/cluster-manager)
+
+Despite the goodness above, this project is at a very early stage of development, is missing key functionality and is not, yet, recommended for adoption.
 
 It's aims are to provide a stepping stone for PHP projects expanding from a single server or new projects that will adopt a queue-driven clustered server architecture from the outset.
 
