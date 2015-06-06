@@ -22,4 +22,12 @@ class ConfigTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue($config->has('key'));
         $this->assertEquals('value', $config->get('key'));
     }
+
+    public function testSetDuringInstantiation()
+    {
+        $config = new Config(['key' => 'value']);
+
+        $this->assertTrue($config->has('key'));
+        $this->assertEquals('value', $config->get('key'));
+    }
 }
