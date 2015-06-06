@@ -1,6 +1,6 @@
 <?php
 
-namespace Kuroi\Cluster;
+namespace Kuroi\Cluster\Queues;
 
 class Queue
 {
