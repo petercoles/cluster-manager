@@ -1,6 +1,6 @@
 <?php
 
-namespace Kuroi\Cluster\Servers\Adapters;
+namespace Kuroi\Cluster\Contracts;
 
 interface ServerAdapterInterface
 {
