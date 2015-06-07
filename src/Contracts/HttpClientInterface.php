@@ -4,7 +4,7 @@ namespace Kuroi\Cluster\Contracts;
 
 interface HttpClientInterface
 {
-    public function initClient($params);
+    public function initClient($headers);
 
     public function getStatus($response);
 
