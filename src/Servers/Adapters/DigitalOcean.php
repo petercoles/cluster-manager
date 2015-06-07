@@ -3,7 +3,6 @@
 namespace Kuroi\Cluster\Servers\Adapters;
 
 use Kuroi\Cluster\Contracts\ServerAdapterInterface;
-use Kuroi\Cluster\Contracts\HttpClientInterface;
 
 class DigitalOcean implements ServerAdapterInterface
 {
