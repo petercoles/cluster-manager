@@ -34,10 +34,9 @@ class DigitalOcean implements ServerAdapterInterface
     ];
 
     /**
-     * Constructor - receive API authentication details and initialise the
-     * http client that will make API requests.
+     * Set the client class var.
      *
-     * @param array $params
+     * @param array $client
      *
      * @return null
      */
