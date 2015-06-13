@@ -18,7 +18,7 @@ class ServerTest extends \PHPUnit_Framework_TestCase
         $this->client
             ->shouldReceive('initClient')->once()->andReturn('client');
 
-        $this->server = new Server($this->adapter, $this->client, ['token' => 'foo']);
+        $this->server = new Server($this->adapter, ['token' => 'foo'], $this->client);
     }
 
     public function tearDown()
