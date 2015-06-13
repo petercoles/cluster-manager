@@ -93,7 +93,7 @@ class DigitalOcean implements ServerAdapterInterface
      *
      * @param integer $id
      *
-     * @return integer
+     * @return integer | null
      */
     public function delete($id)
     {
@@ -103,13 +103,14 @@ class DigitalOcean implements ServerAdapterInterface
             $status = $this->client->getStatus($response);
 
             if (204 != $status) {
-                throw new Exception('Unable to delete server.');
+                throw new Exception('Digital Ocean responded that it could not delete it.');
             }
+
+            return $status;
+
         } catch (Exception $e) {
             echo 'Unable to delete server because ' . $e->getMessage();
         }
-
-        return $status;
     }
 
     /**
