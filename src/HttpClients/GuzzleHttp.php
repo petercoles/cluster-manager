@@ -13,7 +13,7 @@ class GuzzleHttp implements HttpClientInterface
     /**
      * Initialise Guzzle client using headers appropriate to adapter.
      *
-     * @param integer $headers
+     * @param array $headers
      */
     public function initClient($headers)
     {
