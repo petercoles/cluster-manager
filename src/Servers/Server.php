@@ -10,14 +10,12 @@ class Server
     protected $adapter;
 
     /**
-     * Constructor - receive server adapter, http client and server authentication details.
+     * Constructor - receive server adapter, adapter api authentication and http client details.
      * Initialise the http client and make it available for use by the server adapter.
      *
      * @param object $adapter
+     * @param array $authParams
      * @param object $client
-     * @param array $params
-     *
-     * @return null
      */
     public function __construct(ServerAdapterInterface $adapter, HttpClientInterface $client, array $authParams)
     {
