@@ -76,13 +76,13 @@ class DigitalOcean implements ServerAdapterInterface
         $serverConfig = array_merge($this->defaults, $params);
 
         try {
-            $response = $this->client->request->post($this->apiEndpoint . "/droplets", ['form_params' => $serverConfig]);
+            $response = $this->client->request->post($this->apiEndpoint."/droplets", ['form_params' => $serverConfig]);
 
             if (202 != $this->client->getStatus($response)) {
                 throw new Exception('Unable to create server.');
             }
         } catch (Exception $e) {
-            echo 'Unable to create server because ' . $e->getMessage();
+            echo 'Unable to create server because '.$e->getMessage();
         }
 
         return $this->client->getBody($response);
@@ -98,7 +98,7 @@ class DigitalOcean implements ServerAdapterInterface
     public function delete($id)
     {
         try {
-            $response = $this->client->request->delete($this->apiEndpoint . "/droplets/$id");
+            $response = $this->client->request->delete($this->apiEndpoint."/droplets/$id");
 
             $status = $this->client->getStatus($response);
 
@@ -109,7 +109,7 @@ class DigitalOcean implements ServerAdapterInterface
             return $status;
 
         } catch (Exception $e) {
-            echo 'Unable to delete server because ' . $e->getMessage();
+            echo 'Unable to delete server because '.$e->getMessage();
         }
     }
 
@@ -125,7 +125,7 @@ class DigitalOcean implements ServerAdapterInterface
         return [
             'headers' => [
                 'Content-Type' => 'application/json',
-                'Authorization' => 'Bearer ' . $authParams['token']
+                'Authorization' => 'Bearer '.$authParams['token']
             ]
         ];
     }
