@@ -2,6 +2,7 @@
 
 namespace Kuroi\Cluster\Servers\Adapters;
 
+use Exception;
 use Kuroi\Cluster\Contracts\ServerAdapterInterface;
 
 class DigitalOcean implements ServerAdapterInterface
