@@ -10,11 +10,9 @@ class GuzzleHttp implements HttpClientInterface
     public $request;
 
     /**
-     * Constructor - Instantiate Guzzle client using headers appropriate to adapter.
+     * Initialise Guzzle client using headers appropriate to adapter.
      *
-     * @param integer $token
-     *
-     * @return GuzzleHttp\Client object
+     * @param integer $headers
      */
     public function initClient($headers)
     {
