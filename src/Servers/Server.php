@@ -17,13 +17,18 @@ class Server
      * @param array $authParams
      * @param object $client
      */
-    public function __construct(ServerAdapterInterface $adapter, HttpClientInterface $client, array $authParams)
+    public function __construct(ServerAdapterInterface $adapter, array $authParams, HttpClientInterface $client = null)
     {
         // set the server adapter
         $this->adapter = $adapter;
 
         // construct the authentication header options - dependent on the adapter being used
         $headers = $this->adapter->requestHeaders($authParams);
+
+        // for ease of use we can fallback to a default http client
+        if (!$client) {
+            $client = new \Kuroi\Cluster\HttpClients\GuzzleHttp;
+        }
 
         // initialise the http client with the authentication header options
         $client->initClient($headers);
