@@ -55,7 +55,7 @@ class DigitalOcean implements ServerAdapterInterface
      */
     public function read($id = null)
     {
-        if (!$id) {
+        if ($id === null) {
             $response = $this->client->request->get($this->apiEndpoint . "/droplets");
         } else {
             $response = $this->client->request->get($this->apiEndpoint . "/droplets/$id");
