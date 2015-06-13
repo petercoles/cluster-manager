@@ -4,6 +4,7 @@ namespace Kuroi\Cluster\HttpClients;
 
 use Kuroi\Cluster\Contracts\HttpClientInterface;
 use GuzzleHttp\Client;
+use Exception;
 
 class GuzzleHttp implements HttpClientInterface
 {
