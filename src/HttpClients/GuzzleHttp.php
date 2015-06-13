@@ -20,7 +20,7 @@ class GuzzleHttp implements HttpClientInterface
         try {
             $this->request = new Client($headers);
         } catch (Exception $e) {
-            echo 'Unable to initialise http client because '. $e->getMessgae() . "\n";
+            echo 'Unable to initialise http client because '. $e->getMessage() . "\n";
         }
     }
 
