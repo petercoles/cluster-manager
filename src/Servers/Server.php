@@ -13,9 +13,9 @@ class Server
      * Constructor - receive server adapter, adapter api authentication and http client details.
      * Initialise the http client and make it available for use by the server adapter.
      *
-     * @param object $adapter
+     * @param ServerAdapterInterface $adapter
      * @param array $authParams
-     * @param object $client
+     * @param HttpClientInterface $client
      */
     public function __construct(ServerAdapterInterface $adapter, array $authParams, HttpClientInterface $client = null)
     {
@@ -42,7 +42,7 @@ class Server
      *
      * @param integer $id
      *
-     * @return GuzzleResponse object | array of GuzzleResponse objects
+     * @return GuzzleResponse | array of GuzzleResponse objects
      */
     public function read($id = null)
     {
