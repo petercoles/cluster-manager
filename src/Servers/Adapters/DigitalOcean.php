@@ -37,7 +37,7 @@ class DigitalOcean implements ServerAdapterInterface
     /**
      * Set the client class var.
      *
-     * @param array $client
+     * @param GuzzleHttp\Client $client
      *
      * @return null
      */
