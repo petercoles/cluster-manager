@@ -32,7 +32,7 @@ class IronMQ extends Adapter implements QueueAdapterInterface
     }
 
     /**
-     * Initialise http client.
+     * Construct http client request headers.
      *
      * @return null
      */
