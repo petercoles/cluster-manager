@@ -3,29 +3,15 @@
 namespace Kuroi\Cluster\Servers\Adapters;
 
 use Exception;
+use Kuroi\Cluster\Contracts\Adapter;
 use Kuroi\Cluster\Contracts\ServerAdapterInterface;
 
-class DigitalOcean implements ServerAdapterInterface
+class DigitalOcean extends Adapter implements ServerAdapterInterface
 {
     /**
      * The endpoint for all API calls to Digital Ocean (currently at v2)
      */
     protected $apiEndpoint = 'https://api.digitalocean.com/v2';
-
-    /**
-     * Params used to initialise this instance, e.g. authentication parameters for the Digital Ocean API.
-     */
-    protected $params;
-
-    /**
-     * The http client that will manage API requests and handle responses.
-     */
-    protected $client;
-
-    /**
-     * The headers to proceed the API request in order to authenticate it.
-     */
-    protected $headers;
 
     /**
      * A set of default params for creating Digital Ocean droplets
@@ -43,28 +29,6 @@ class DigitalOcean implements ServerAdapterInterface
         "user_data" => null,
         "private_networking" => null
     ];
-
-    /**
-     * Constructor. Receive and record parameters. Use them to set request headers.
-     */
-    public function __construct($params)
-    {
-        $this->params = $params;
-
-        $this->setHeaders();
-    }
-
-    /**
-     * Set the client class var.
-     *
-     * @param GuzzleHttp\Client $client
-     *
-     * @return null
-     */
-    public function setClient($client)
-    {
-        $this->client = $client;
-    }
 
     /**
      * List details for an indexed server, or all servers if id is null.
@@ -138,7 +102,7 @@ class DigitalOcean implements ServerAdapterInterface
      *
      * @return null
      */
-    private function setHeaders()
+    protected function setHeaders()
     {
         $this->headers = [
             'headers' => [
@@ -146,15 +110,5 @@ class DigitalOcean implements ServerAdapterInterface
                 'Authorization' => 'Bearer '.$this->params['token']
             ]
         ];
-    }
-
-    /**
-     * Get headers for https client.
-     *
-     * @return array
-     */
-    public function getHeaders()
-    {
-        return $this->headers;
     }
 }
