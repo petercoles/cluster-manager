@@ -2,13 +2,12 @@
 
 namespace Kuroi\Cluster\Servers;
 
+use Kuroi\Cluster\Contracts\Factory;
 use Kuroi\Cluster\Contracts\ServerAdapterInterface;
 use Kuroi\Cluster\Contracts\HttpClientInterface;
 
-class Server
+class Server extends Factory
 {
-    protected $adapter;
-
     /**
      * Constructor - receive server adapter, adapter api authentication and http client details.
      * Initialise the http client and make it available for use by the server adapter.
@@ -18,19 +17,7 @@ class Server
      */
     public function __construct(ServerAdapterInterface $adapter, HttpClientInterface $client = null)
     {
-        // set the server adapter
-        $this->adapter = $adapter;
-
-        // for ease of use we can fallback to a default http client
-        if (!$client) {
-            $client = new \Kuroi\Cluster\HttpClients\GuzzleHttp;
-        }
-
-        // initialise the http client with the authentication header options
-        $client->initClient($this->adapter->getHeaders());
-
-        // make the initialised http client available to the adapter
-        $this->adapter->setClient($client);
+        $this->init($adapter, $client);
     }
 
     /**
