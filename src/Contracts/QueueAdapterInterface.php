@@ -1,6 +1,6 @@
 <?php
 
-namespace Kuroi\Cluster\Queues\Adapters;
+namespace Kuroi\Cluster\Contracts;
 
 interface QueueAdapterInterface
 {
