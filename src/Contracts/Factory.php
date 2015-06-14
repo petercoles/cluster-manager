@@ -15,7 +15,7 @@ abstract class Factory
      * @param object $adapter
      * @param object $client
      */
-    public function init($adapter, $client)
+    public function init($adapter, $client = null)
     {
         // set the server adapter
         $this->adapter = $adapter;
