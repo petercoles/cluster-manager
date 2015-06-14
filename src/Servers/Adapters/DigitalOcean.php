@@ -102,13 +102,10 @@ class DigitalOcean extends Adapter implements ServerAdapterInterface
      *
      * @return null
      */
-    protected function setHeaders()
+    public function setHeaders()
     {
-        $this->headers = [
-            'headers' => [
-                'Content-Type' => 'application/json',
-                'Authorization' => 'Bearer '.$this->params['token']
-            ]
-        ];
+        parent::setHeaders();
+
+        $this->headers['headers']['Authorization'] = 'Bearer ' . $this->params['token'];
     }
 }

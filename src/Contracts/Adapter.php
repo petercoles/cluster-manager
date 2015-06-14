@@ -42,6 +42,16 @@ abstract class Adapter
     }
 
     /**
+     * Construct http client request headers.
+     *
+     * @return null
+     */
+    public function setHeaders()
+    {
+        $this->headers['headers']['Content-Type'] = 'application/json';
+    }
+
+    /**
      * Get headers for https client.
      *
      * @return array
