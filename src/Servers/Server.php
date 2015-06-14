@@ -14,16 +14,12 @@ class Server
      * Initialise the http client and make it available for use by the server adapter.
      *
      * @param ServerAdapterInterface $adapter
-     * @param array $authParams
      * @param HttpClientInterface $client
      */
-    public function __construct(ServerAdapterInterface $adapter, array $authParams, HttpClientInterface $client = null)
+    public function __construct(ServerAdapterInterface $adapter, HttpClientInterface $client = null)
     {
         // set the server adapter
         $this->adapter = $adapter;
-
-        // construct the authentication header options - dependent on the adapter being used
-        $headers = $this->adapter->requestHeaders($authParams);
 
         // for ease of use we can fallback to a default http client
         if (!$client) {
@@ -31,7 +27,7 @@ class Server
         }
 
         // initialise the http client with the authentication header options
-        $client->initClient($headers);
+        $client->initClient($this->adapter->getHeaders());
 
         // make the initialised http client available to the adapter
         $this->adapter->setClient($client);

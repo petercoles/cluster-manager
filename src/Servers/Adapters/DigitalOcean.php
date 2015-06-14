@@ -13,9 +13,19 @@ class DigitalOcean implements ServerAdapterInterface
     protected $apiEndpoint = 'https://api.digitalocean.com/v2';
 
     /**
+     * Params used to initialise this instance, e.g. authentication parameters for the Digital Ocean API.
+     */
+    protected $params;
+
+    /**
      * The http client that will manage API requests and handle responses.
      */
     protected $client;
+
+    /**
+     * The headers to proceed the API request in order to authenticate it.
+     */
+    protected $headers;
 
     /**
      * A set of default params for creating Digital Ocean droplets
@@ -33,6 +43,16 @@ class DigitalOcean implements ServerAdapterInterface
         "user_data" => null,
         "private_networking" => null
     ];
+
+    /**
+     * Constructor. Receive and record parameters. use them to set request headers.
+     */
+    public function __construct($params)
+    {
+        $this->params = $params;
+
+        $this->setHeaders();
+    }
 
     /**
      * Set the client class var.
@@ -114,19 +134,27 @@ class DigitalOcean implements ServerAdapterInterface
     }
 
     /**
-     * Initialise http client.
+     * Construct http client request headers.
      *
-     * @param array $authParams
+     * @return null
+     */
+    private function setHeaders()
+    {
+        $this->headers = [
+            'headers' => [
+                'Content-Type' => 'application/json',
+                'Authorization' => 'Bearer '.$this->params['token']
+            ]
+        ];
+    }
+
+    /**
+     * Get headers for https client.
      *
      * @return array
      */
-    public function requestHeaders($authParams)
+    public function getHeaders()
     {
-        return [
-            'headers' => [
-                'Content-Type' => 'application/json',
-                'Authorization' => 'Bearer '.$authParams['token']
-            ]
-        ];
+        return $this->headers;
     }
 }

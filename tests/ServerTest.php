@@ -9,16 +9,16 @@ class ServerTest extends \PHPUnit_Framework_TestCase
 {
     public function setUp()
     {
-        $this->adapter = m::mock('\Kuroi\Cluster\Servers\Adapters\DigitalOcean');
+        $this->adapter = m::mock('\Kuroi\Cluster\Servers\Adapters\DigitalOcean', ['token' => 'foo']);
         $this->adapter
-            ->shouldReceive('requestHeaders')->once()->andReturn('headers')
+            ->shouldReceive('getHeaders')->once()->andReturn('headers')
             ->shouldReceive('setClient')->once();
 
         $this->client = m::mock('\Kuroi\Cluster\HttpClients\GuzzleHttp');
         $this->client
             ->shouldReceive('initClient')->once()->andReturn('client');
 
-        $this->server = new Server($this->adapter, ['token' => 'foo'], $this->client);
+        $this->server = new Server($this->adapter, $this->client);
     }
 
     public function tearDown()
