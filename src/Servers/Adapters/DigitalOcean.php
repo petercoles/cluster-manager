@@ -45,7 +45,7 @@ class DigitalOcean implements ServerAdapterInterface
     ];
 
     /**
-     * Constructor. Receive and record parameters. use them to set request headers.
+     * Constructor. Receive and record parameters. Use them to set request headers.
      */
     public function __construct($params)
     {
