@@ -68,4 +68,16 @@ class Server
     {
         return $this->adapter->delete($id);
     }
+
+    /**
+     * List available server images.
+     *
+     * @param array $params     list of qualifiers to filter the response
+     *
+     * @return array
+     */
+    public function images($params = [])
+    {
+        return $this->adapter->images($params);
+    }
 }

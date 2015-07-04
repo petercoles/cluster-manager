@@ -61,4 +61,22 @@ class ServerTest extends \PHPUnit_Framework_TestCase
 
         $this->assertEquals(204, $result);
     }
+
+    public function testListOfImagesNoParams()
+    {
+        $this->adapter->shouldReceive('images')->andReturn('bar');
+
+        $result = $this->server->images();
+
+        $this->assertEquals('bar', $result);
+    }
+
+    public function testListOfImagesWithParams()
+    {
+        $this->adapter->shouldReceive('images')->with(['foo' => 'bar'])->andReturn('baz');
+
+        $result = $this->server->images(['foo' => 'bar']);
+
+        $this->assertEquals('baz', $result);
+    }
 }

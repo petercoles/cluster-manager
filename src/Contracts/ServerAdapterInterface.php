@@ -9,4 +9,6 @@ interface ServerAdapterInterface
     public function create($params);
 
     public function delete($id);
+
+    public function images($params);
 }
