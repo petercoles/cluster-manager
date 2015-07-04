@@ -32,6 +32,20 @@ class IronMQ extends Adapter implements QueueAdapterInterface
     }
 
     /**
+     * Receives the name of a queue and clears it.
+     *
+     * @param string $queue
+     *
+     * @return null
+     */
+    public function clear($queue)
+    {
+        $this->client->request->post(
+            $this->apiEndpoint.'/projects/'.$this->params['project'].'/queues/'.$queue.'/clear'
+        );
+    }
+
+    /**
      * Construct http client request headers.
      *
      * @return null

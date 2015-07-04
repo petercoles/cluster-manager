@@ -31,4 +31,16 @@ class Queue extends Factory
     {
         return $this->adapter->count($queue);
     }
+
+    /**
+     * Empty a named queue.
+     *
+     * @param string $queue
+     *
+     * @return null
+     */
+    public function clear($queue)
+    {
+        $this->adapter->clear($queue);
+    }
 }
