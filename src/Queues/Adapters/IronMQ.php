@@ -32,17 +32,14 @@ class IronMQ extends Adapter implements QueueAdapterInterface
     }
 
     /**
-     * Initialise http client.
+     * Construct http client request headers.
      *
      * @return null
      */
     public function setHeaders()
     {
-        $this->headers = [
-            'headers' => [
-                'Content-Type' => 'application/json',
-                'Authorization' => 'OAuth ' . $this->params['token']
-            ]
-        ];
+        parent::setHeaders();
+
+        $this->headers['headers']['Authorization'] = 'OAuth ' . $this->params['token'];
     }
 }
