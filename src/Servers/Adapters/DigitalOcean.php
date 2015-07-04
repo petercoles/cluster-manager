@@ -140,7 +140,7 @@ class DigitalOcean extends Adapter implements ServerAdapterInterface
      *
      * @param Array | null  $in   array of parameters to be converted to string for URL
      *
-     * @return null
+     * @return String
      */
     private function paramsToString($in)
     {
