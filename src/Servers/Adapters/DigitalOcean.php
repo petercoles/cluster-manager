@@ -144,13 +144,8 @@ class DigitalOcean extends Adapter implements ServerAdapterInterface
      */
     private function paramsToString($in)
     {
-        $out = '';
-        if (count($in) > 0) {
-            $out = '?';
-            foreach ($in as $key => $value) {
-                $out .= "$key=$value";
-            }
-        }
-        return $out;
+        $out = http_build_query((array) $in);
+
+        return strlen($out) > 0 ? '?'.$out : '';
     }
 }
