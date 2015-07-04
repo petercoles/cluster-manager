@@ -106,16 +106,8 @@ class DigitalOcean extends Adapter implements ServerAdapterInterface
      */
     public function images($params)
     {
-        $qualifiers = '';
-        if (count($params) > 0) {
-            $qualifiers = '?';
-            foreach ($params as $key => $value) {
-                $qualifiers .= "$key=$value";
-            }
-        }
-
         try {
-            $response = $this->client->request->get($this->apiEndpoint.'/images'.$qualifiers);
+            $response = $this->client->request->get($this->apiEndpoint.'/images'.$this->paramsToString($params));
 
             $status = $this->client->getStatus($response);
 
@@ -140,5 +132,25 @@ class DigitalOcean extends Adapter implements ServerAdapterInterface
         parent::setHeaders();
 
         $this->headers['headers']['Authorization'] = 'Bearer ' . $this->params['token'];
+    }
+
+    /**
+     * Construct http client request headers.
+     * @todo this isn't the best place for it - see where it gets used next and find it a better home
+     *
+     * @param Array | null  $in   array of parameters to be converted to string for URL
+     *
+     * @return null
+     */
+    private function paramsToString($in)
+    {
+        $out = '';
+        if (count($in) > 0) {
+            $out = '?';
+            foreach ($in as $key => $value) {
+                $out .= "$key=$value";
+            }
+        }
+        return $out;
     }
 }
