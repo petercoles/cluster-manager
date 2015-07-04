@@ -98,6 +98,39 @@ class DigitalOcean extends Adapter implements ServerAdapterInterface
     }
 
     /**
+     * List of available snapshots.
+     *
+     * @param array $params
+     *
+     * @return array
+     */
+    public function images($params)
+    {
+        $qualifiers = '';
+        if (count($params) > 0) {
+            $qualifiers = '?';
+            foreach ($params as $key => $value) {
+                $qualifiers .= "$key=$value";
+            }
+        }
+
+        try {
+            $response = $this->client->request->get($this->apiEndpoint.'/images'.$qualifiers);
+
+            $status = $this->client->getStatus($response);
+
+            if (200 != $status) {
+                throw new Exception('Digital Ocean was not able to successfully provide a list of snapshots.');
+            }
+
+            return $this->client->getBody($response);
+
+        } catch (Exception $e) {
+            echo 'Unable to list snapshots because '.$e->getMessage();
+        }
+    }
+
+    /**
      * Construct http client request headers.
      *
      * @return null
