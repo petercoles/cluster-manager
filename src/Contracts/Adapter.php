@@ -46,7 +46,7 @@ abstract class Adapter
      *
      * @return null
      */
-    public function setHeaders()
+    private function setHeaders()
     {
         $this->headers['headers']['Content-Type'] = 'application/json';
     }

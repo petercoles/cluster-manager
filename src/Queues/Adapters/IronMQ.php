@@ -50,7 +50,7 @@ class IronMQ extends Adapter implements QueueAdapterInterface
      *
      * @return null
      */
-    public function setHeaders()
+    private function setHeaders()
     {
         parent::setHeaders();
 
