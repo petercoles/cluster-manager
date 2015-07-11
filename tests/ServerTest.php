@@ -26,7 +26,7 @@ class ServerTest extends \PHPUnit_Framework_TestCase
         m::close();
     }
 
-    public function testReadListOfDroplets()
+    public function testReadListOfServers()
     {
         $this->adapter->shouldReceive('read')->andReturn('bar');
 
@@ -35,7 +35,7 @@ class ServerTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('bar', $result);
     }
 
-    public function testReadDroplet()
+    public function testReadServer()
     {
         $this->adapter->shouldReceive('read')->with(123)->andReturn('bar');
 
@@ -44,7 +44,7 @@ class ServerTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('bar', $result);
     }
 
-    public function testCreateDroplet()
+    public function testCreateServer()
     {
         $this->adapter->shouldReceive('create')->with(['image' => 'foo'])->andReturn('bar');
 
@@ -53,7 +53,7 @@ class ServerTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('bar', $result);
     }
 
-    public function testDeleteDroplet()
+    public function testDeleteServer()
     {
         $this->adapter->shouldReceive('delete')->with(123)->andReturn(204);
 
