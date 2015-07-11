@@ -14,11 +14,11 @@ class ServerTest extends \PHPUnit_Framework_TestCase
             ->shouldReceive('getHeaders')->once()->andReturn('headers')
             ->shouldReceive('setClient')->once();
 
-        $this->client = m::mock('\Kuroi\Cluster\HttpClients\GuzzleHttp');
-        $this->client
+        $this->httpClient = m::mock('\Kuroi\Cluster\HttpClients\GuzzleHttp');
+        $this->httpClient
             ->shouldReceive('initClient')->once()->andReturn('client');
 
-        $this->server = new Server($this->adapter, $this->client);
+        $this->server = new Server($this->adapter, $this->httpClient);
     }
 
     public function tearDown()
