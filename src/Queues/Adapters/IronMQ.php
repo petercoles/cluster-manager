@@ -51,6 +51,6 @@ class IronMQ extends Adapter implements QueueAdapterInterface
     {
         parent::setHeaders();
 
-        $this->headers['headers']['Authorization'] = 'OAuth ' . $this->params['token'];
+        $this->headers['headers']['Authorization'] = 'OAuth '.$this->params['token'];
     }
 }
