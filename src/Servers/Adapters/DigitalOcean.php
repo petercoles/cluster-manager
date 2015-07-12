@@ -34,7 +34,6 @@ class DigitalOcean extends Adapter implements ServerAdapterInterface
      * List details for an indexed server, or all servers if id is null.
      *
      * @param integer $id
-     *
      * @return GuzzleResponse object | array of GuzzleResponse objects
      */
     public function read($id = null)
@@ -52,7 +51,6 @@ class DigitalOcean extends Adapter implements ServerAdapterInterface
      * Create a new server based on parameters received.
      *
      * @param array $params
-     *
      * @return array
      */
     public function create($params = array())
@@ -76,7 +74,6 @@ class DigitalOcean extends Adapter implements ServerAdapterInterface
      * Delete the server corresponding to the given id.
      *
      * @param integer $id
-     *
      * @return integer | null
      */
     public function delete($id)
@@ -101,7 +98,6 @@ class DigitalOcean extends Adapter implements ServerAdapterInterface
      * List of available snapshots.
      *
      * @param array $params
-     *
      * @return array
      */
     public function images($params)
@@ -125,7 +121,7 @@ class DigitalOcean extends Adapter implements ServerAdapterInterface
     /**
      * Construct http client request headers.
      *
-     * @return null
+     * @return void
      */
     protected function setHeaders()
     {
@@ -136,11 +132,10 @@ class DigitalOcean extends Adapter implements ServerAdapterInterface
 
     /**
      * Construct http client request headers.
-     * @todo this isn't the best place for it - see where it gets used next and find it a better home
+     * @todo this isn't the best place for this method - see where it gets used next and find it a better home
      *
-     * @param Array | null  $in   array of parameters to be converted to string for URL
-     *
-     * @return String
+     * @param array | null  $in   array of parameters to be converted to string for URL
+     * @return string
      */
     private function paramsToString($in)
     {

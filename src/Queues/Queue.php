@@ -24,7 +24,6 @@ class Queue extends Factory
      * Receives the name of a queue and returns the number of jobs in that queue.
      *
      * @param string $queue
-     *
      * @return integer
      */
     public function count($queue)
@@ -36,8 +35,7 @@ class Queue extends Factory
      * Empty a named queue.
      *
      * @param string $queue
-     *
-     * @return null
+     * @return void
      */
     public function clear($queue)
     {
