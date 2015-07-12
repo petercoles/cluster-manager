@@ -127,7 +127,7 @@ class DigitalOcean extends Adapter implements ServerAdapterInterface
      *
      * @return null
      */
-    private function setHeaders()
+    protected function setHeaders()
     {
         parent::setHeaders();
 
