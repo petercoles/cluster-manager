@@ -2,7 +2,6 @@
 
 namespace Kuroi\Cluster\Queues\Adapters;
 
-use Exception;
 use Kuroi\Cluster\Contracts\Adapter;
 use Kuroi\Cluster\Contracts\QueueAdapterInterface;
 
