@@ -127,7 +127,7 @@ class DigitalOcean extends Adapter implements ServerAdapterInterface
     {
         parent::setHeaders();
 
-        $this->headers['headers']['Authorization'] = 'Bearer ' . $this->params['token'];
+        $this->headers['headers']['Authorization'] = 'Bearer '.$this->params['token'];
     }
 
     /**
