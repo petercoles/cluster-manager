@@ -36,7 +36,6 @@ class Config
      * Check existence of an item by key.
      *
      * @param string $key
-     *
      * @return bool
      */
     public function has($key)
@@ -49,7 +48,6 @@ class Config
      *
      * @param string $key
      * @param mixed  $value
-     *
      * @return $this
      */
     public function set($key, $value)

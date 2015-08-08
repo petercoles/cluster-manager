@@ -24,7 +24,6 @@ class Server extends Factory
      * List details for an indexed server, or all servers if id is null.
      *
      * @param integer $id
-     *
      * @return GuzzleResponse | array of GuzzleResponse objects
      */
     public function read($id = null)
@@ -36,7 +35,6 @@ class Server extends Factory
      * Create a new server based on parameters received.
      *
      * @param array $params
-     *
      * @return array
      */
     public function create($params)
@@ -48,7 +46,6 @@ class Server extends Factory
      * Delete the server corresponding to the given id.
      *
      * @param integer $id
-     *
      * @return integer
      */
     public function delete($id)
@@ -60,7 +57,6 @@ class Server extends Factory
      * List available server images.
      *
      * @param array $params     list of qualifiers to filter the response
-     *
      * @return array
      */
     public function images($params = [])

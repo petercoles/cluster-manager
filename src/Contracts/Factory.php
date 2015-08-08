@@ -14,6 +14,7 @@ abstract class Factory
      *
      * @param object $adapter
      * @param object $client
+     * @return void
      */
     public function init($adapter, $client = null)
     {

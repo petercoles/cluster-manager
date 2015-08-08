@@ -21,6 +21,8 @@ abstract class Adapter
 
     /**
      * Constructor. Receive and record parameters. Use them to set request headers.
+     *
+     * @param array $params
      */
     public function __construct($params)
     {
@@ -33,8 +35,7 @@ abstract class Adapter
      * Set the client class var.
      *
      * @param GuzzleHttp\Client $client
-     *
-     * @return null
+     * @return void
      */
     public function setClient($client)
     {
@@ -44,9 +45,9 @@ abstract class Adapter
     /**
      * Construct http client request headers.
      *
-     * @return null
+     * @return void
      */
-    public function setHeaders()
+    protected function setHeaders()
     {
         $this->headers['headers']['Content-Type'] = 'application/json';
     }

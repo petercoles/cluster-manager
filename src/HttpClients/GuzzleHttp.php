@@ -14,13 +14,14 @@ class GuzzleHttp implements HttpClientInterface
      * Initialise Guzzle client using headers appropriate to adapter.
      *
      * @param array $headers
+     * @return void
      */
     public function initClient($headers)
     {
         try {
             $this->request = new Client($headers);
         } catch (Exception $e) {
-            echo 'Unable to initialise http client because '. $e->getMessage() . "\n";
+            echo 'Unable to initialise http client because '.$e->getMessage()."\n";
         }
     }
 
@@ -28,7 +29,6 @@ class GuzzleHttp implements HttpClientInterface
      * Get status code from http response.
      *
      * @param GuzzleResponse $response
-     *
      * @return integer
      */
     public function getStatus($response)
@@ -40,7 +40,6 @@ class GuzzleHttp implements HttpClientInterface
      * Get http response body, cast to json and decode.
      *
      * @param GuzzleHttp\Response object $response
-     *
      * @return array
      */
     public function getBody($response)

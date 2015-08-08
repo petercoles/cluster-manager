@@ -2,7 +2,6 @@
 
 namespace Kuroi\Cluster\Queues\Adapters;
 
-use Exception;
 use Kuroi\Cluster\Contracts\Adapter;
 use Kuroi\Cluster\Contracts\QueueAdapterInterface;
 
@@ -18,7 +17,6 @@ class IronMQ extends Adapter implements QueueAdapterInterface
      * List details for an indexed server, or all servers if id is null.
      *
      * @param string $queue
-     *
      * @return integer
      */
     public function count($queue)
@@ -35,8 +33,7 @@ class IronMQ extends Adapter implements QueueAdapterInterface
      * Receives the name of a queue and clears it.
      *
      * @param string $queue
-     *
-     * @return null
+     * @return void
      */
     public function clear($queue)
     {
@@ -48,12 +45,12 @@ class IronMQ extends Adapter implements QueueAdapterInterface
     /**
      * Construct http client request headers.
      *
-     * @return null
+     * @return void
      */
-    public function setHeaders()
+    protected function setHeaders()
     {
         parent::setHeaders();
 
-        $this->headers['headers']['Authorization'] = 'OAuth ' . $this->params['token'];
+        $this->headers['headers']['Authorization'] = 'OAuth '.$this->params['token'];
     }
 }
