@@ -17,7 +17,7 @@
         "issues": "https://github.com/petercoles/cluster"
     },
     "require": {
-        "php": ">=5.5.0",
+        "php": ">=5.6.0",
         "guzzlehttp/guzzle": "~6.2"
     },
     "require-dev": {
