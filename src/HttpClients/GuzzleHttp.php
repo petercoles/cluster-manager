@@ -1,8 +1,8 @@
 <?php
 
-namespace Kuroi\Cluster\HttpClients;
+namespace PeterColes\Cluster\HttpClients;
 
-use Kuroi\Cluster\Contracts\HttpClientInterface;
+use PeterColes\Cluster\Contracts\HttpClientInterface;
 use GuzzleHttp\Client;
 use Exception;
 

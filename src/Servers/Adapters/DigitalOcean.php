@@ -1,10 +1,10 @@
 <?php
 
-namespace Kuroi\Cluster\Servers\Adapters;
+namespace PeterColes\Cluster\Servers\Adapters;
 
 use Exception;
-use Kuroi\Cluster\Contracts\Adapter;
-use Kuroi\Cluster\Contracts\ServerAdapterInterface;
+use PeterColes\Cluster\Contracts\Adapter;
+use PeterColes\Cluster\Contracts\ServerAdapterInterface;
 
 class DigitalOcean extends Adapter implements ServerAdapterInterface
 {

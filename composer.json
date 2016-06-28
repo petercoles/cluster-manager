@@ -26,12 +26,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Kuroi\\Cluster\\": "src"
+            "PeterColes\\Cluster\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Kuroi\\Cluster\\Test\\": "tests"
+            "PeterColes\\Cluster\\Test\\": "tests"
         }
     }
 }

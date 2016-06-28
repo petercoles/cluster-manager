@@ -1,6 +1,6 @@
 <?php
 
-namespace Kuroi\Cluster\Contracts;
+namespace PeterColes\Cluster\Contracts;
 
 abstract class Factory
 {
@@ -23,7 +23,7 @@ abstract class Factory
 
         // for ease of use we can fallback to a default http client
         if (!$client) {
-            $client = new \Kuroi\Cluster\HttpClients\GuzzleHttp;
+            $client = new \PeterColes\Cluster\HttpClients\GuzzleHttp;
         }
 
         // initialise the http client with the authentication header options

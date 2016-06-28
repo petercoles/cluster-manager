@@ -1,6 +1,6 @@
 <?php
 
-namespace Kuroi\Cluster;
+namespace PeterColes\Cluster;
 
 class Manager
 {

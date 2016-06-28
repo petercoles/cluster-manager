@@ -1,20 +1,20 @@
 <?php
 
-namespace Kuroi\Cluster\Test;
+namespace PeterColes\Cluster\Test;
 
 use Mockery as m;
-use Kuroi\Cluster\Servers\Server;
+use PeterColes\Cluster\Servers\Server;
 
 class ServerTest extends \PHPUnit_Framework_TestCase
 {
     public function setUp()
     {
-        $this->adapter = m::mock('\Kuroi\Cluster\Servers\Adapters\DigitalOcean', ['token' => 'foo']);
+        $this->adapter = m::mock('\PeterColes\Cluster\Servers\Adapters\DigitalOcean', ['token' => 'foo']);
         $this->adapter
             ->shouldReceive('getHeaders')->once()->andReturn('headers')
             ->shouldReceive('setClient')->once();
 
-        $this->httpClient = m::mock('\Kuroi\Cluster\HttpClients\GuzzleHttp');
+        $this->httpClient = m::mock('\PeterColes\Cluster\HttpClients\GuzzleHttp');
         $this->httpClient
             ->shouldReceive('initClient')->once()->andReturn('client');
 

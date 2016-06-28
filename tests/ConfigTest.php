@@ -1,8 +1,8 @@
 <?php
 
-namespace Kuroi\Cluster\Test;
+namespace PeterColes\Cluster\Test;
 
-use Kuroi\Cluster\Config;
+use PeterColes\Cluster\Config;
 
 class ConfigTest extends \PHPUnit_Framework_TestCase
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace Kuroi\Cluster\Test;
+namespace PeterColes\Cluster\Test;
 
-use Kuroi\Cluster\Manager;
+use PeterColes\Cluster\Manager;
 
 class ManagerTest extends \PHPUnit_Framework_TestCase
 {

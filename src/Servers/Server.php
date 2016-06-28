@@ -1,10 +1,10 @@
 <?php
 
-namespace Kuroi\Cluster\Servers;
+namespace PeterColes\Cluster\Servers;
 
-use Kuroi\Cluster\Contracts\Factory;
-use Kuroi\Cluster\Contracts\ServerAdapterInterface;
-use Kuroi\Cluster\Contracts\HttpClientInterface;
+use PeterColes\Cluster\Contracts\Factory;
+use PeterColes\Cluster\Contracts\ServerAdapterInterface;
+use PeterColes\Cluster\Contracts\HttpClientInterface;
 
 class Server extends Factory
 {

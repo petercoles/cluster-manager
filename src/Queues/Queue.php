@@ -1,10 +1,10 @@
 <?php
 
-namespace Kuroi\Cluster\Queues;
+namespace PeterColes\Cluster\Queues;
 
-use Kuroi\Cluster\Contracts\Factory;
-use Kuroi\Cluster\Contracts\QueueAdapterInterface;
-use Kuroi\Cluster\Contracts\HttpClientInterface;
+use PeterColes\Cluster\Contracts\Factory;
+use PeterColes\Cluster\Contracts\QueueAdapterInterface;
+use PeterColes\Cluster\Contracts\HttpClientInterface;
 
 class Queue extends Factory
 {

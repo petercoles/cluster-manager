@@ -1,11 +1,11 @@
 <?php
 
-namespace Kuroi\Cluster\Test;
+namespace PeterColes\Cluster\Test;
 
 use Mockery as m;
-use Kuroi\Cluster\Servers\Server;
-use Kuroi\Cluster\Servers\Adapters\DigitalOcean;
-use Kuroi\Cluster\HttpClients\GuzzleHttp;
+use PeterColes\Cluster\Servers\Server;
+use PeterColes\Cluster\Servers\Adapters\DigitalOcean;
+use PeterColes\Cluster\HttpClients\GuzzleHttp;
 
 class DigitalOceanTest extends \PHPUnit_Framework_TestCase
 {

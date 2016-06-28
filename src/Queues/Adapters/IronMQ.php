@@ -1,9 +1,9 @@
 <?php
 
-namespace Kuroi\Cluster\Queues\Adapters;
+namespace PeterColes\Cluster\Queues\Adapters;
 
-use Kuroi\Cluster\Contracts\Adapter;
-use Kuroi\Cluster\Contracts\QueueAdapterInterface;
+use PeterColes\Cluster\Contracts\Adapter;
+use PeterColes\Cluster\Contracts\QueueAdapterInterface;
 
 class IronMQ extends Adapter implements QueueAdapterInterface
 {
