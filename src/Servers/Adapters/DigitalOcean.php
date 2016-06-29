@@ -58,7 +58,7 @@ class DigitalOcean extends Adapter implements ServerAdapterInterface
         $serverConfig = array_merge($this->defaults, $params);
 
         try {
-            $response = $this->client->request->post($this->apiEndpoint."/droplets", ['form_params' => $serverConfig]);
+            $response = $this->client->request->post($this->apiEndpoint."/droplets", ['json' => $serverConfig]);
 
             if (202 != $this->client->getStatus($response)) {
                 throw new Exception('Unable to create server.');
